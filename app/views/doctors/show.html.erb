@@ -1,10 +1,6 @@
 <h2><%= @doctor.name %> <%= @doctor.department %> </h2>
 
 <% @doctor.appointments.each do |appt| %>
-  <%= appt.formatted_datetime %> | <%= link_to appt.patient.name, patient_path %>
+  <%= appt.formatted_datetime %> | <%= link_to appt.patient.name, patient_path(appt.patient) %>
   <br />
 <% end %>
-
-
-<%# appt.patient.name
-appt.appt_datetime %>
